@@ -22,7 +22,8 @@ my_screen.onkey(snake.down, "s")
 my_screen.onkey(snake.left, "a")
 my_screen.onkey(snake.right, "d")
 
-while True:
+is_running = True
+while is_running:
     my_screen.update()
     time.sleep(GAME_SPEED)
     snake.move()
@@ -30,6 +31,10 @@ while True:
     if snake.head.distance(food) < 15:
         food.refresh()
         scoreboard.add_score()
+
+    if abs(snake.head.xcor()) > 280 or abs(snake.head.ycor()) > 280:
+        scoreboard.game_over()
+        is_running = False
 
 
 
