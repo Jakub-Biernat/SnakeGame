@@ -22,16 +22,15 @@ my_screen.onkey(snake.down, "s")
 my_screen.onkey(snake.left, "a")
 my_screen.onkey(snake.right, "d")
 
-score = 0
 while True:
     my_screen.update()
     time.sleep(GAME_SPEED)
     snake.move()
-    scoreboard.show_score(score)
+    scoreboard.show_score()
 
     if snake.head.distance(food) < 15:
         food.refresh()
-        score += 1
+        scoreboard.add_score()
 
 
 
