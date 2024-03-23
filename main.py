@@ -37,6 +37,13 @@ while is_running:
         scoreboard.game_over()
         is_running = False
 
+    for segment in snake.segments:
+        if segment == snake.head:
+            pass
+        elif snake.head.distance(segment) < 10:
+            is_running = False
+            scoreboard.game_over()
+
 
 
 
