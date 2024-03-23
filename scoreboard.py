@@ -1,4 +1,6 @@
 from turtle import Turtle
+ALIGNMENT = "left"
+FONT = ('Arial', 10, 'normal')
 
 
 class Scoreboard(Turtle):
@@ -9,11 +11,14 @@ class Scoreboard(Turtle):
         self.color("white")
         self.hideturtle()
         self.penup()
-        self.goto(-290, 280)
-        self.write(f"Score: {self.score}", move=False, align="left", font=('Arial', 12, 'normal'))
+        self.goto(-290, 275)
+        self.write_score()
+
+    def write_score(self):
+        self.write(f"Score: {self.score}", move=False, align=ALIGNMENT, font=ALIGNMENT)
 
     def add_score(self):
         self.score += 1
         self.clear()
-        self.write(f"Score: {self.score}", move=False, align="left", font=('Arial', 12, 'normal'))
+        self.write_score()
 
