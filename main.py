@@ -42,13 +42,4 @@ while is_running:
             is_running = False
             scoreboard.game_over()
 
-
-
-
-
-
-
-
-
-
 my_screen.exitonclick()
